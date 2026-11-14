@@ -1,0 +1,30 @@
+{
+  "provenance": "CASI-Net main manuscript IV-A and Supplementary Material S2/S3/S7 (user-uploaded versions), NOT independent verification",
+  "dataset_reporting_units": {
+    "Kuro Siwo": {"all": 43, "train": 21, "validation": 6, "calibration": 10, "test": 6},
+    "MMFlood": {"all": 95, "train": 46, "validation": 15, "calibration": 20, "test": 14},
+    "CAU-Flood": {"all": 18, "train": 7, "validation": 2, "calibration": 3, "test": 6},
+    "Sen2GF3Floods": {"all": 9, "train": 3, "validation": 1, "calibration": 2, "test": 3}
+  },
+  "reporting_unit_totals": {"all": 165, "train": 77, "validation": 24, "calibration": 35, "test": 29},
+  "eligible_independent_parent_events": {
+    "optical": {"calibration": 32, "test": 24},
+    "sar": {"calibration": 34, "test": 26}
+  },
+  "repaired_scene_audit": {
+    "all_replaced_scenes": 12,
+    "cau_flood": 7,
+    "sen2gf3floods": 5,
+    "joint_valid_pixels_reported_approx": 2400000,
+    "initial_disagreement_percent": 1.60,
+    "flagged_positive_fraction_percent": 0.24,
+    "confirmed_inconsistent_positive_fraction_percent": 0.07,
+    "ndwi_threshold": 0.10,
+    "mndwi_threshold": 0.15,
+    "boundary_tolerance_pixels": 1
+  },
+  "optical_preflood_selection": {"preferred_lead_days_min": 3, "preferred_lead_days_max": 60, "minimum_valid_fraction": 0.85},
+  "leakage_screening_described_in_supplement": {"time_window_days": 14, "phash_warning_similarity": 0.95},
+  "geo_alignment": {"analysis_grid_meters": 10, "median_residual_max_pixels": 0.5, "p95_residual_max_pixels": 1.0},
+  "caution": "These are manuscript-reported aggregate values and protocol parameters. They do not authenticate raw observations or actual event IDs."
+}

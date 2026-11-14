@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Please cite the CASI-Net article when reusing this code and numerical verification toolkit."
+title: "CASI-Net: Code and Numerical Verification"
+authors:
+  - family-names: Bai
+    given-names: Shuchen
+  - family-names: Cao
+    given-names: Tao
+  - family-names: Ren
+    given-names: Xiaofeng
+  - family-names: Ren
+    given-names: Baojian
+  - family-names: Zhang
+    given-names: Zhengyang
+  - family-names: Zhang
+    given-names: Xinglin
+abstract: "Code-only reference implementation and numerical verification utilities for CASI-Net heterogeneous SAR-optical flood change detection."

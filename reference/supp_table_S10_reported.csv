@@ -1,0 +1,5 @@
+method,cau_f1_percent,sen2gf3_f1_percent,steep_fpr_percent,vegetation_recall_percent
+Image-only,93.78,94.08,8.8,78.1
+Image + HAND,93.96,94.17,7.5,75.9
+Tuned HAND + source connectivity,94.32,94.49,7.0,80.6
+Full CASI-Net,94.91,95.05,5.7,83.4

@@ -1,0 +1,106 @@
+file,field,definition_en,field_origin,required_in_submission
+reporting_units.csv,record_status,Source-verification state: unverified_actual or verified_actual; the latter requires independently checkable source records.,STRUCTURAL_DESIGN,yes
+reporting_units.csv,reporting_unit_id,Stable primary key for one dataset-level acquisition/reporting unit; MUST not be a patch filename.,STRUCTURAL_DESIGN,yes
+reporting_units.csv,parent_event_uid,Stable ID of the underlying independent physical flood event/hydrologic system/acquisition window.,STRUCTURAL_DESIGN,yes
+reporting_units.csv,dataset,"Use exact Kuro Siwo, MMFlood, CAU-Flood, Sen2GF3Floods naming.",ACTUAL_DATA_REQUIRED,yes
+reporting_units.csv,original_event_id,"Original source dataset identifier, not an invented paper-friendly ID.",ACTUAL_DATA_REQUIRED,yes
+reporting_units.csv,study_region,Dataset region/scene/site identifier.,ACTUAL_DATA_REQUIRED,yes
+reporting_units.csv,split,"train, validation, calibration, or test; frozen BEFORE final evaluation.",ACTUAL_DATA_REQUIRED,yes
+reporting_units.csv,sar_product_id,Full original SAR product/granule ID including acquisition identity.,ACTUAL_DATA_REQUIRED,yes
+reporting_units.csv,sar_acquired_utc,"UTC ISO-8601 SAR acquisition timestamp, not event approximate peak.",ACTUAL_DATA_REQUIRED,yes
+reporting_units.csv,optical_original_product_id,Identifier of optical observation originally supplied or initially paired.,ACTUAL_DATA_REQUIRED,yes
+reporting_units.csv,optical_original_acquired_utc,Exact UTC timestamp for the original optical acquisition.,ACTUAL_DATA_REQUIRED,yes
+reporting_units.csv,optical_used_product_id,Actual pre-event optical product consumed by the model.,ACTUAL_DATA_REQUIRED,yes
+reporting_units.csv,optical_used_acquired_utc,Exact UTC timestamp of the optical product actually consumed.,ACTUAL_DATA_REQUIRED,yes
+reporting_units.csv,optical_replaced,True only if the used pre-event optical is a selective replacement.,ACTUAL_DATA_REQUIRED,yes
+reporting_units.csv,optical_valid_fraction,"Actual fraction of valid optical observations over the analysis support, 0-1.",ACTUAL_DATA_REQUIRED,yes
+reporting_units.csv,original_optical_native_bands,Semicolon-separated genuine native bands of original optical scene.,ACTUAL_DATA_REQUIRED,yes
+reporting_units.csv,used_optical_native_bands,Semicolon-separated genuine bands of used optical product; no imaginary bands.,ACTUAL_DATA_REQUIRED,yes
+reporting_units.csv,sar_native_polarizations,"Genuine native SAR polarization values, e.g. VV or HH;HV.",ACTUAL_DATA_REQUIRED,yes
+reporting_units.csv,optical_input_mapping,Frozen native-to-10-channel normalized mapping configuration identifier.,ACTUAL_DATA_REQUIRED,yes
+reporting_units.csv,sar_input_mapping,Frozen co/cross/incidence channel mapping identifier.,ACTUAL_DATA_REQUIRED,yes
+reporting_units.csv,incidence_angle_source,"Original source for local incidence angle channel, metadata or raster ID.",ACTUAL_DATA_REQUIRED,yes
+reporting_units.csv,bbox_crs,For submission EPSG:4326 longitude/latitude; synthetic uses non-geographic marker.,ACTUAL_DATA_REQUIRED,yes
+reporting_units.csv,bbox_min_x,Minimum longitude (submission EPSG:4326).,ACTUAL_DATA_REQUIRED,yes
+reporting_units.csv,bbox_min_y,Minimum latitude (submission EPSG:4326).,ACTUAL_DATA_REQUIRED,yes
+reporting_units.csv,bbox_max_x,Maximum longitude (submission EPSG:4326).,ACTUAL_DATA_REQUIRED,yes
+reporting_units.csv,bbox_max_y,Maximum latitude (submission EPSG:4326).,ACTUAL_DATA_REQUIRED,yes
+reporting_units.csv,footprint_sha256,SHA-256 of the actual footprint source file (GeoJSON etc).,ACTUAL_DATA_REQUIRED,yes
+reporting_units.csv,scene_phash64,Optional 64-bit pHash hex string; compatible preprocessing only.,ACTUAL_DATA_REQUIRED,conditional
+reporting_units.csv,duplicate_group_id,Duplicate/near-duplicate acquisition group. All related units must remain in one split.,STRUCTURAL_DESIGN,conditional
+reporting_units.csv,label_reference_id,Frozen reference change annotation version or original file ID.,ACTUAL_DATA_REQUIRED,yes
+reporting_units.csv,eligible_optical,Whether physical parent contributes genuine eligible optical candidate under S7.,STRUCTURAL_DESIGN,yes
+reporting_units.csv,eligible_sar,Whether physical parent contributes genuine eligible SAR candidate under S7.,STRUCTURAL_DESIGN,yes
+reporting_units.csv,eligibility_rule_version,Frozen calibration/test eligibility rule and selection version.,STRUCTURAL_DESIGN,yes
+reporting_units.csv,valid_mask_path,Path/URI to genuine valid-pixel mask used by all compared models.,ACTUAL_DATA_REQUIRED,yes
+reporting_units.csv,valid_mask_sha256,SHA-256 of the genuine valid-pixel mask file.,ACTUAL_DATA_REQUIRED,yes
+reporting_units.csv,source_record_uri,Stable file path or provider link backing acquisition IDs and metadata.,ACTUAL_DATA_REQUIRED,yes
+reporting_units.csv,notes,Optional truthful background context; never add claims unsupported by source.,ACTUAL_DATA_REQUIRED,conditional
+parent_events.csv,record_status,Source-verification state: unverified_actual or verified_actual; the latter requires independently checkable source records.,STRUCTURAL_DESIGN,yes
+parent_events.csv,parent_event_uid,Stable ID of the underlying independent physical flood event/hydrologic system/acquisition window.,STRUCTURAL_DESIGN,yes
+parent_events.csv,disaster_identity,Named flood event/official incident identifier or documented hydrologic disaster.,ACTUAL_DATA_REQUIRED,yes
+parent_events.csv,hydrological_system,"River network/region identity used for grouping, not patch tile.",ACTUAL_DATA_REQUIRED,yes
+parent_events.csv,event_start_utc,UTC date-time of parent flood/acquisition window start.,ACTUAL_DATA_REQUIRED,yes
+parent_events.csv,event_end_utc,UTC date-time of parent window end.,ACTUAL_DATA_REQUIRED,yes
+parent_events.csv,split,"train, validation, calibration, or test; frozen BEFORE final evaluation.",ACTUAL_DATA_REQUIRED,yes
+parent_events.csv,datasets_in_group,Semicolon-separated datasets that share this one parent event.,ACTUAL_DATA_REQUIRED,yes
+parent_events.csv,reporting_unit_ids,Semicolon-separated child reporting_unit_id values.,ACTUAL_DATA_REQUIRED,yes
+parent_events.csv,bbox_crs,For submission EPSG:4326 longitude/latitude; synthetic uses non-geographic marker.,ACTUAL_DATA_REQUIRED,yes
+parent_events.csv,bbox_min_x,Minimum longitude (submission EPSG:4326).,ACTUAL_DATA_REQUIRED,yes
+parent_events.csv,bbox_min_y,Minimum latitude (submission EPSG:4326).,ACTUAL_DATA_REQUIRED,yes
+parent_events.csv,bbox_max_x,Maximum longitude (submission EPSG:4326).,ACTUAL_DATA_REQUIRED,yes
+parent_events.csv,bbox_max_y,Maximum latitude (submission EPSG:4326).,ACTUAL_DATA_REQUIRED,yes
+parent_events.csv,partition_decision_source,Where the final event grouping and split decision is documented.,ACTUAL_DATA_REQUIRED,yes
+parent_events.csv,duplicate_review_status,Status of manual duplicate and cross-source parent grouping review.,ACTUAL_DATA_REQUIRED,yes
+parent_events.csv,notes,Optional truthful background context; never add claims unsupported by source.,ACTUAL_DATA_REQUIRED,conditional
+original_and_repaired_pairs.csv,record_status,Source-verification state: unverified_actual or verified_actual; the latter requires independently checkable source records.,STRUCTURAL_DESIGN,yes
+original_and_repaired_pairs.csv,reporting_unit_id,Stable primary key for one dataset-level acquisition/reporting unit; MUST not be a patch filename.,STRUCTURAL_DESIGN,yes
+original_and_repaired_pairs.csv,parent_event_uid,Stable ID of the underlying independent physical flood event/hydrologic system/acquisition window.,STRUCTURAL_DESIGN,yes
+original_and_repaired_pairs.csv,dataset,"Use exact Kuro Siwo, MMFlood, CAU-Flood, Sen2GF3Floods naming.",ACTUAL_DATA_REQUIRED,yes
+original_and_repaired_pairs.csv,split,"train, validation, calibration, or test; frozen BEFORE final evaluation.",ACTUAL_DATA_REQUIRED,yes
+original_and_repaired_pairs.csv,original_optical_product_id,Original optical product id; derive from real source data.,ACTUAL_DATA_REQUIRED,yes
+original_and_repaired_pairs.csv,original_optical_utc,UTC observation time of originally paired optical.,ACTUAL_DATA_REQUIRED,yes
+original_and_repaired_pairs.csv,used_optical_product_id,Used optical product id; derive from real source data.,ACTUAL_DATA_REQUIRED,yes
+original_and_repaired_pairs.csv,used_optical_utc,UTC observation time of used pre-event optical.,ACTUAL_DATA_REQUIRED,yes
+original_and_repaired_pairs.csv,sar_product_id,Full original SAR product/granule ID including acquisition identity.,ACTUAL_DATA_REQUIRED,yes
+original_and_repaired_pairs.csv,sar_utc,UTC observation time of post-event SAR.,ACTUAL_DATA_REQUIRED,yes
+original_and_repaired_pairs.csv,replaced,True/false for replacement relative to original optical.,ACTUAL_DATA_REQUIRED,yes
+original_and_repaired_pairs.csv,replacement_reason,"Clouds, no valid normal-state evidence, registration failure, etc; must be actual.",ACTUAL_DATA_REQUIRED,yes
+original_and_repaired_pairs.csv,valid_optical_fraction,Actually measured optical valid support fraction (0-1).,ACTUAL_DATA_REQUIRED,yes
+original_and_repaired_pairs.csv,cloud_shadow_mask_method,Used Level-2A SCL/QA/cloud-shadow processing graph/version.,ACTUAL_DATA_REQUIRED,yes
+original_and_repaired_pairs.csv,registration_median_px,Measured median stable-point residual coregistration in image pixels.,ACTUAL_DATA_REQUIRED,yes
+original_and_repaired_pairs.csv,registration_p95_px,Measured 95th percentile stable-point displacement in pixels.,ACTUAL_DATA_REQUIRED,yes
+original_and_repaired_pairs.csv,original_mask_path,"Original optical valid/water mask, real asset path.",ACTUAL_DATA_REQUIRED,yes
+original_and_repaired_pairs.csv,used_mask_path,"Replacement/used optical valid/water mask, real asset path.",ACTUAL_DATA_REQUIRED,yes
+original_and_repaired_pairs.csv,valid_mask_path,Path/URI to genuine valid-pixel mask used by all compared models.,ACTUAL_DATA_REQUIRED,yes
+original_and_repaired_pairs.csv,original_mask_sha256,Cryptographic hash of the source mask file.,ACTUAL_DATA_REQUIRED,yes
+original_and_repaired_pairs.csv,used_mask_sha256,Cryptographic hash of used mask file.,ACTUAL_DATA_REQUIRED,yes
+original_and_repaired_pairs.csv,reference_change_label_id,Identifier of original evaluation change label used across methods.,ACTUAL_DATA_REQUIRED,yes
+original_and_repaired_pairs.csv,label_audit_id,Link to one independent pre-event label audit record for replaced scene.,STRUCTURAL_DESIGN,yes
+original_and_repaired_pairs.csv,approval_record,"Independent QC decision file, timestamp, reviewer, with original evidence.",ACTUAL_DATA_REQUIRED,yes
+original_and_repaired_pairs.csv,notes,Optional truthful background context; never add claims unsupported by source.,ACTUAL_DATA_REQUIRED,conditional
+benchmark_label_audit.csv,record_status,Source-verification state: unverified_actual or verified_actual; the latter requires independently checkable source records.,STRUCTURAL_DESIGN,yes
+benchmark_label_audit.csv,label_audit_id,Link to one independent pre-event label audit record for replaced scene.,STRUCTURAL_DESIGN,yes
+benchmark_label_audit.csv,reporting_unit_id,Stable primary key for one dataset-level acquisition/reporting unit; MUST not be a patch filename.,STRUCTURAL_DESIGN,yes
+benchmark_label_audit.csv,parent_event_uid,Stable ID of the underlying independent physical flood event/hydrologic system/acquisition window.,STRUCTURAL_DESIGN,yes
+benchmark_label_audit.csv,dataset,"Use exact Kuro Siwo, MMFlood, CAU-Flood, Sen2GF3Floods naming.",ACTUAL_DATA_REQUIRED,yes
+benchmark_label_audit.csv,split,"train, validation, calibration, or test; frozen BEFORE final evaluation.",ACTUAL_DATA_REQUIRED,yes
+benchmark_label_audit.csv,valid_joint_px,Count of pixels jointly valid in original and replacement pre-event observations.,ACTUAL_DATA_REQUIRED,yes
+benchmark_label_audit.csv,initial_disagree_px,Disagreement pixels after fixed NDWI/MNDWI rule and one-pixel tolerance.,ACTUAL_DATA_REQUIRED,yes
+benchmark_label_audit.csv,original_positive_label_px,"Count of original positive change-label pixels in the audited definition, NOT all joint-valid pixels.",ACTUAL_DATA_REQUIRED,yes
+benchmark_label_audit.csv,flagged_positive_px,Original positive change pixels flagged for independent discrepancy review.,ACTUAL_DATA_REQUIRED,yes
+benchmark_label_audit.csv,confirmed_inconsistent_px,Original positive changes confirmed inconsistent under independently verified two-state evidence.,ACTUAL_DATA_REQUIRED,yes
+benchmark_label_audit.csv,corrected_px,Count of pixels in this scene with approved label corrections.,ACTUAL_DATA_REQUIRED,yes
+benchmark_label_audit.csv,excluded_px,"Count excluded as unresolved, not automatically coded negative.",ACTUAL_DATA_REQUIRED,yes
+benchmark_label_audit.csv,ndwi_cutoff,Predefined NDWI threshold 0.10 from Supplement S3.2.,PAPER_PROTOCOL,yes
+benchmark_label_audit.csv,mndwi_cutoff,Predefined MNDWI threshold 0.15 from Supplement S3.2.,PAPER_PROTOCOL,yes
+benchmark_label_audit.csv,boundary_tolerance_px,Spatial boundary tolerance 1 pixel.,PAPER_PROTOCOL,yes
+benchmark_label_audit.csv,independent_review_status,Source of human/adjudicated review and whether completed.,ACTUAL_DATA_REQUIRED,yes
+benchmark_label_audit.csv,original_reference_label_id,Original change mask version identifier.,ACTUAL_DATA_REQUIRED,yes
+benchmark_label_audit.csv,corrected_label_path,Actual corrected label raster path or stable URI.,ACTUAL_DATA_REQUIRED,yes
+benchmark_label_audit.csv,corrected_label_sha256,SHA-256 for corrected label raster.,ACTUAL_DATA_REQUIRED,yes
+benchmark_label_audit.csv,valid_mask_path,Path/URI to genuine valid-pixel mask used by all compared models.,ACTUAL_DATA_REQUIRED,yes
+benchmark_label_audit.csv,valid_mask_sha256,SHA-256 of the genuine valid-pixel mask file.,ACTUAL_DATA_REQUIRED,yes
+benchmark_label_audit.csv,decision_record_path,Actual independent QC decision log documenting each corrected/excluded location.,ACTUAL_DATA_REQUIRED,yes
+benchmark_label_audit.csv,review_freeze_utc,Date/time at which audit decisions and corrected labels were frozen.,ACTUAL_DATA_REQUIRED,yes
+benchmark_label_audit.csv,notes,Optional truthful background context; never add claims unsupported by source.,ACTUAL_DATA_REQUIRED,conditional

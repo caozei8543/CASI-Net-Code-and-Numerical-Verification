@@ -1,0 +1,11 @@
+configuration,cau_f1_percent,sen2gf3_f1_percent,steep_fpr_percent,vegetation_recall_percent
+Image-only,93.78,94.08,8.8,78.1
+Image + HAND,93.96,94.17,7.5,75.9
+w/o normal-state reachability,94.29,94.43,7.6,82.1
+w/o hydraulic gradient bound,94.31,94.47,8.0,83.1
+w/o observability gating,94.5,94.66,6.9,79.4
+w/o contour-consistency test,94.57,94.69,8.1,83.0
+w/o source-constrained reachability,94.39,94.5,8.6,84.1
+w/o stochastic DEM perturbations,94.72,94.83,6.8,82.4
+w/o contour test and source-constrained reachability,94.23,94.25,10.2,83.7
+Full CASI-Net,94.91,95.05,5.7,83.4

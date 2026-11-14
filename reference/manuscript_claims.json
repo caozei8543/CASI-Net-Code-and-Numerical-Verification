@@ -1,0 +1,137 @@
+{
+  "source": "CASI-Net final main PDF Table I-IV and Supplement S2-S14; reported values, not independently rederived",
+  "dataset_reporting_units": {
+    "Kuro Siwo": {
+      "train": 21,
+      "validation": 6,
+      "calibration": 10,
+      "test": 6
+    },
+    "MMFlood": {
+      "train": 46,
+      "validation": 15,
+      "calibration": 20,
+      "test": 14
+    },
+    "CAU-Flood": {
+      "train": 7,
+      "validation": 2,
+      "calibration": 3,
+      "test": 6
+    },
+    "Sen2GF3Floods": {
+      "train": 3,
+      "validation": 1,
+      "calibration": 2,
+      "test": 3
+    }
+  },
+  "expected_total_reporting_units": 165,
+  "repaired_optical_scenes": {
+    "CAU-Flood": 7,
+    "Sen2GF3Floods": 5
+  },
+  "label_audit": {
+    "joint_valid_pixels_approx": 2400000,
+    "initial_disagreement_percent": 1.6,
+    "original_positive_flagged_percent": 0.24,
+    "original_positive_confirmed_percent": 0.07
+  },
+  "conformal": {
+    "optical": {
+      "calibration_events": 32,
+      "test_events": 24,
+      "alpha_0.1_k": 30,
+      "rejection_p_lt": 0.09,
+      "frr_percent": 6.8,
+      "fcrr_percent": 51.6,
+      "coverage_percent": 62.6
+    },
+    "sar": {
+      "calibration_events": 34,
+      "test_events": 26,
+      "alpha_0.1_k": 32,
+      "rejection_p_lt": 0.085,
+      "frr_percent": 7.5,
+      "fcrr_percent": 54.9,
+      "coverage_percent": 61.3
+    }
+  },
+  "primary_f1_percent": {
+    "CAU-Flood": {
+      "CASI-Net": 94.91,
+      "CISRMamba": 94.34
+    },
+    "Sen2GF3Floods": {
+      "CASI-Net": 95.05,
+      "CISRMamba": 94.86
+    }
+  },
+  "primary_miou_percent": {
+    "CAU-Flood": {
+      "CASI-Net": 93.55,
+      "CISRMamba": 92.91
+    },
+    "Sen2GF3Floods": {
+      "CASI-Net": 94.06,
+      "CISRMamba": 93.85
+    }
+  },
+  "paired_f1_gain_percentage_points": {
+    "CAU-Flood": 0.57,
+    "Sen2GF3Floods": 0.19
+  },
+  "paired_event_bootstrap_ci_pp": {
+    "CAU-Flood": [
+      0.25,
+      0.87
+    ],
+    "Sen2GF3Floods": [
+      -0.22,
+      0.61
+    ]
+  },
+  "win_counts": {
+    "CAU-Flood": [
+      5,
+      6
+    ],
+    "Sen2GF3Floods": [
+      2,
+      3
+    ]
+  },
+  "two_factor_interaction_pp": {
+    "CAU-Flood": 0.18,
+    "Sen2GF3Floods": 0.11
+  },
+  "hecras": {
+    "event_count": 8,
+    "gauge_observations": 18,
+    "stage_sites": 48,
+    "depth_sites_valid": 104,
+    "depth_sites_candidate": 112
+  },
+  "hecras_full_casinet": {
+    "stage_rise": {
+      "mae_m": 0.279,
+      "rmse_m": 0.321,
+      "bias_m": 0.057,
+      "picp90_percent": 89.6,
+      "mpiw90_m": 1.006
+    },
+    "inundation_depth": {
+      "mae_m": 0.351,
+      "rmse_m": 0.431,
+      "bias_m": -0.089,
+      "picp90_percent": 92.3,
+      "mpiw90_m": 1.363
+    }
+  },
+  "full_scene_runtime_seconds": [
+    67.0,
+    242.3,
+    637.8
+  ],
+  "caution": "All figures here are manuscript-reported targets only. No source measurements have been supplied to this archive."
+}

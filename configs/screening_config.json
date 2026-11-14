@@ -1,0 +1,8 @@
+{
+  "source": "±14-day and 0.95 similarity warning from Supplement S2.2; 500-m buffer is a conservative screening convention, not a validated manuscript parameter.",
+  "temporal_window_days": 14,
+  "phash_similarity_warning": 0.95,
+  "spatial_buffer_m": 500,
+  "same_footprint_revisit_is_not_automatic_leakage": true,
+  "cross_split_geo_temporal_candidate_requires_manual_review": true
+}

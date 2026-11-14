@@ -1,0 +1,1 @@
+parent_event_uid,gauge_id,gauge_time_utc,coordinate_crs,x,y,vertical_datum,observed_stage_m,simulated_stage_m,used_for_forcing,used_for_calibration,observation_source_id

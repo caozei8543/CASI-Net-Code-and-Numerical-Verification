@@ -1,0 +1,100 @@
+{
+  "provenance": "main paper / supplementary (reported implementation)",
+  "dataset": {
+    "analysis_resolution_m": 10,
+    "optical_preflood_days": [
+      3,
+      60
+    ],
+    "min_valid_optical_fraction": 0.85,
+    "split_unit": "parent_event_uid"
+  },
+  "image": {
+    "encoder": "resnet34_nonshared",
+    "optical_channels": [
+      "B2",
+      "B3",
+      "B4",
+      "B5",
+      "B6",
+      "B7",
+      "B8",
+      "B8A",
+      "B11",
+      "B12"
+    ],
+    "sar_channels": [
+      "co_pol",
+      "cross_pol",
+      "incidence_angle"
+    ],
+    "missing_channel_fill_after_normalization": 0.0,
+    "batch_size_effective": 8,
+    "patch": [
+      512,
+      512
+    ],
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0001,
+    "epochs_max": 100,
+    "image_warmup_epochs": 30,
+    "physical_cache_refresh_epochs": 10,
+    "random_seeds": [
+      2026,
+      2027,
+      2028,
+      2029,
+      2030
+    ]
+  },
+  "physical": {
+    "control_grid_m": 90,
+    "max_hydraulic_gradient_m_per_m": 0.003,
+    "candidate_water_probability_threshold": 0.5,
+    "persistent_source_probability_threshold": 0.8,
+    "min_candidate_pixels": 25,
+    "hydrography_dilation_m": 150,
+    "min_effective_anchors": 60,
+    "min_fit_anchors_per_arc": 30,
+    "min_source_pixels": 8,
+    "support_dilation_m": 360,
+    "crossfit_arcs": 5,
+    "crossfit_buffer_m": 300,
+    "trim_fraction": 0.1,
+    "num_null_replicates": 199,
+    "num_paired_replicates": 200,
+    "huber_delta": 1.345,
+    "laplacian_lambda": 0.01,
+    "admm_rho_initial": 1.0,
+    "irls_max": 25,
+    "admm_max": 500,
+    "stopping_scaled": 0.0001,
+    "target_edge_excess_m": 1e-06,
+    "terrain_sigma_m": {
+      "low_vegetation_bare": 0.85,
+      "cropland_mixed": 1.2,
+      "dense_vegetation": 1.75,
+      "built_up": 2.4,
+      "wetland_complex": 1.55
+    },
+    "terrain_corr_length_m": 250,
+    "nugget_sigma_m": 0.35,
+    "optical_shoreline_localization_m": 7.5,
+    "sar_shoreline_localization_m": 12.5,
+    "optical_repr_sigma_m": 0.35,
+    "sar_repr_sigma_m": 0.55
+  },
+  "calibration": {
+    "alpha_primary": 0.1,
+    "alpha_sensitivity": [
+      0.05,
+      0.2
+    ],
+    "sampler": "one uniform genuine eligible candidate per independent parent event"
+  },
+  "fusion": {
+    "max_logit_abs": 4,
+    "gamma": 0.7,
+    "epsilon": 0.0025
+  }
+}

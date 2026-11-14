@@ -1,0 +1,1 @@
+case_id,parent_event_uid,failure_mode,optical_product_id,sar_product_id,dem_id,reference_mask_id,observability_state,source_core_present,mask_sha256,figure_source_path,evidence_uri,review_status

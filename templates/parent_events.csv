@@ -1,0 +1,1 @@
+record_status,parent_event_uid,disaster_identity,hydrological_system,event_start_utc,event_end_utc,split,datasets_in_group,reporting_unit_ids,bbox_crs,bbox_min_x,bbox_min_y,bbox_max_x,bbox_max_y,partition_decision_source,duplicate_review_status,notes

@@ -1,0 +1,9 @@
+display_event_index,stage_sites,depth_candidate_sites,depth_valid_sites,gauge_observations,exclusion_reason
+E01,6,13,12,3,boundary:1
+E02,5,15,15,2,
+E03,7,15,14,3,terrain:1
+E04,6,14,12,4,boundary:1;matching:1
+E05,5,13,13,2,
+E06,6,13,11,4,terrain:1;boundary:1
+E07,7,15,14,0,terrain:1
+E08,6,14,13,0,matching:1
